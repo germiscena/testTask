@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.App {
+  position: absolute;
+  width: 1600px;
+  height: 1024px;
+  background: linear-gradient(129deg, #284450 11.51%, #32586f 77.93%);
+  overflow: hidden;
+
+  &_blackShade {
+    width: 1316px;
+    height: 740px;
+    flex-shrink: 0;
+    border-radius: 1316px;
+    background: #060f16;
+    filter: blur(140px);
+    margin: 184px 216px;
+  }
+  &_whiteShade {
+    position: absolute;
+    top: 148px;
+    right: 1144px;
+    z-index: 10;
+    width: 1086px;
+    height: 1086px;
+    pointer-events: none;
+    border-radius: 1086px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(202, 239, 255, 0.4) 0%,
+      rgba(204, 240, 255, 0.27) 41.15%,
+      rgba(188, 235, 255, 0) 93.87%
+    );
+  }
+  &_mainBlock {
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    width: 1400px;
+    height: 784px;
+    border-radius: 10px;
+    background: linear-gradient(132deg, rgba(0, 0, 0, 0.2) 17.2%, rgba(0, 0, 0, 0) 79.13%),
+      linear-gradient(281deg, #34515f 5.93%, #233f4b 60.81%, #24404c 100%);
+    box-shadow: -81px -56px 200px -23px rgba(0, 0, 0, 0.3), 80px 30px 152px 30px rgba(0, 0, 0, 0.3);
+
+    &_title {
+      position: absolute;
+      color: #fff;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -2px;
+      margin: 50px 0 0 493px;
+    }
+    &_monthlyGraph {
+      width: 420px;
+      height: 332px;
+      padding: 7px 21px 6px 21px;
+      margin-left: 60px;
+      margin-top: 69px;
+
+      &_graphsNames {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 320px;
+        left: 158px;
+
+        &_name {
+          color: #fff;
+          font-family: Inter;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 100%; /* 12px */
+          letter-spacing: -0.48px;
+          text-transform: uppercase;
+          width: 122px;
+          margin-right: 12px;
+        }
+      }
+    }
+    &_totalTrades {
+      margin-left: 23px;
+      margin-top: 60px;
+
+      &_centerWords {
+        position: absolute;
+        top: 530px;
+        left: 180px;
+        width: 47px;
+        height: 14px;
+        flex-shrink: 0;
+        color: #fff;
+        font-family: Inter;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    &_pie {
+      position: absolute;
+      top: 210px;
+      left: 450px;
+    }
+    &_circles {
+      position: absolute;
+      top: 42px;
+      right: 90px;
+      &_middle {
+        position: absolute;
+        top: 144px;
+        right: 148px;
+        z-index: 10;
+        color: #2a4450;
+        font-family: Playfair Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      &_down {
+        position: absolute;
+        right: 96px;
+        top: 112px;
+      }
+    }
+    &_squares {
+      position: absolute;
+      right: 298px;
+      top: 640px;
+      width: 402px;
+      height: 93px;
+      display: flex;
+      flex-direction: row;
+      gap: 9px;
+
+      &_single {
+        padding: 10px;
+        border-radius: 4.651px;
+        width: 93px;
+        cursor: pointer;
+
+        &_topWords {
+          color: #fff;
+          font-family: Inter;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 100%;
+          letter-spacing: -0.48px;
+          text-transform: uppercase;
+        }
+        &_bottomPercents {
+          color: #fff;
+          font-family: Playfair Display;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: -0.88px;
+          padding-bottom: 10px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      &_single:nth-child(2n-1) {
+        border: 1.755px solid var(--1, rgba(163, 231, 219, 0.6));
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 2.19368px 1.75494px 5.26483px 0px rgba(27, 150, 128, 0.9);
+      }
+      &_single:nth-child(2n) {
+        border: 1.755px solid var(--2, rgba(255, 69, 125, 0.8));
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 2.19368px 1.75494px 5.26483px 0px rgba(210, 54, 101, 0.9);
+      }
+    }
+    &_days {
+      position: absolute;
+      top: 599px;
+      right: 50px;
+      width: 88px;
+      height: 136px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &_upperDays {
+        padding: 10px 9px;
+        &_title {
+          color: #fff;
+          font-family: Inter;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 120%;
+          letter-spacing: -0.4px;
+          text-transform: uppercase;
+          margin: 0;
+        }
+        &_numberDays {
+          color: #fff;
+          font-family: Playfair Display;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: -0.8px;
+          margin: 0;
+        }
+      }
+      &_bottomDate {
+        padding: 10px 9px;
+        &_title {
+          color: #fff;
+          font-family: Inter;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 120%;
+          letter-spacing: -0.4px;
+          text-transform: uppercase;
+          margin: 0;
+        }
+        &_date {
+          color: #fff;
+          font-family: Playfair Display;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: -0.8px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
