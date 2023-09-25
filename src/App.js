@@ -5,50 +5,11 @@ import React from "react";
 import { graph, trades, pie, circle1, circle2 } from "./graphs";
 import axios from "axios";
 function App() {
-  // const [data, setData] = React.useState();
   const [data, setData] = React.useState();
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "https://sheet.best/api/sheets/571d4483-fb62-40d4-9d4e-6857be5ae419",
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch data");
-  //       }
-  //       const text = await response.text();
-  //       const l = JSON.parse(text);
-  //       const filteredDataArray = l.map((obj) => {
-  //         return Object.keys(obj).reduce((acc, key) => {
-  //           if (obj[key] !== null && obj[key] != "") {
-  //             acc[key] = obj[key];
-  //           }
-  //           return acc;
-  //         }, {});
-  //       });
-  //       const lastFilter = filteredDataArray
-  //         .map((obj) => {
-  //           return Object.keys(obj).reduce((acc, key) => {
-  //             if (obj[key] !== null && obj[key] !== "") {
-  //               acc[key] = obj[key];
-  //             }
-  //             return acc;
-  //           }, {});
-  //         })
-  //         .filter((obj) => Object.keys(obj).length > 0);
-  //       setData(lastFilter.map((obj) => Object.values(obj)));
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
   const apiKey = "AIzaSyD3hL5zoq5A_WeWU5LRl6cC7WDH9IX4Aho";
   const spreadsheetId = "14SKgK07JReMNxSqhEf8rWOdaPTS0onvN6DrB4n0cHOk";
   const range = "Dashboard!B2:D30";
   const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
-  console.log(apiUrl);
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -64,7 +25,6 @@ function App() {
 
     fetchData();
   }, []);
-  console.log(data);
   let optionsGraph;
   let optionsTotalTrades;
   let optionsPie;
