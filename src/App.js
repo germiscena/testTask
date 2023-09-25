@@ -41,6 +41,7 @@ function App() {
     optionsCircle1 = circle1(data);
     optionsCircle2 = circle2(data);
   }
+  console.log(data);
   return (
     <div className='App'>
       {data && (
@@ -52,15 +53,13 @@ function App() {
             <div className='App_mainBlock_monthlyGraph'>
               <HighchartsReact highcharts={Highcharts} options={optionsGraph} />
               <div className='App_mainBlock_monthlyGraph_graphsNames'>
-                <p className='App_mainBlock_monthlyGraph_graphsNames_name'>TOTAL FUNDS ALLOCATED</p>
-                <p className='App_mainBlock_monthlyGraph_graphsNames_name'>
-                  TOTAL PROFIT FROM CLOSED TRADES
-                </p>
+                <p className='App_mainBlock_monthlyGraph_graphsNames_name'>{data[7][0]}</p>
+                <p className='App_mainBlock_monthlyGraph_graphsNames_name'>{data[8][0]}</p>
               </div>
             </div>
             <div className='App_mainBlock_totalTrades'>
               <HighchartsReact highcharts={Highcharts} options={optionsTotalTrades} />
-              <p className='App_mainBlock_totalTrades_centerWords'>TOTAL TRADES</p>
+              <p className='App_mainBlock_totalTrades_centerWords'>{data[12][0]}</p>
             </div>
             <div className='App_mainBlock_pie'>
               <HighchartsReact highcharts={Highcharts} options={optionsPie} />
