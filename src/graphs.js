@@ -283,13 +283,13 @@ export const pie = (data) => {
         colorByPoint: true,
         data: [
           {
-            name: "return on capital closed trades",
-            y: Number(data[10][1].slice(0, -1)),
+            name: "estimated return in capital in one year",
+            y: Number(data[11][1].slice(0, -1)),
             sliced: true,
           },
           {
-            name: "estimated return in capital in one year",
-            y: Number(data[11][1].slice(0, -1)),
+            name: "return on capital closed trades",
+            y: Number(data[10][1].slice(0, -1)),
             sliced: true,
           },
           { name: "Скрытый сектор", y: 0, visible: false },
@@ -370,7 +370,7 @@ export const circle1 = (data) => {
     series: [
       {
         type: "pie",
-        data: [{ y: Number(data[24][1].slice(0, -1)), name: "tradedesk performance" }],
+        data: [{ y: Number(data[27][1].slice(0, -1)), name: "tradedesk performance" }],
       },
     ],
   };
@@ -446,7 +446,7 @@ export const circle2 = (data) => {
     series: [
       {
         type: "pie",
-        data: [{ y: Number(data[23][1].slice(0, -1)), name: "S&P performance" }],
+        data: [{ y: Number(data[26][1].slice(0, -1)), name: "S&P performance" }],
       },
     ],
   };
